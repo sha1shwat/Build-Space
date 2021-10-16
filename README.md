@@ -43,7 +43,7 @@ java -jar target/application.jar
 The application can take input commands from a file. You can pass multiple commands separated by a newline in the file like so -
 
 ```
-java -jar target/goparking.jar file_input.txt
+java -jar target/make-space-1.0.jar file_input.txt
 ```
 
 ## Problem Statement
