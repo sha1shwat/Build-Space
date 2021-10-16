@@ -1,4 +1,4 @@
-# Build-Space
+# Find-Space
 
 ## Description
 This is code for the java based implementation of build space problem statement described below.
