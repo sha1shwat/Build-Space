@@ -49,7 +49,7 @@ java -jar target/goparking.jar file_input.txt
 ## Problem Statement
 Build Space Ltd. is a startup offering a co-working space to individuals, freelancers and startups. They provide a common workspace where anyone can come and work. Along with it, they have dedicated meeting rooms that their customers can book for private discussions.
 
-They are looking for a scheduling system to effectively schedule meetings. Can you build such a system for Make Space Ltd.?
+They are looking for a scheduling system to effectively schedule meetings. Can you build such a system for Build Space Ltd.?
 
 Build Space Ltd. currently has 3 meeting rooms with varying capacity
 
