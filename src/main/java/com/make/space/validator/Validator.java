@@ -1,24 +1,25 @@
-package com.make.space;
+package com.make.space.validator;
 
 import com.make.space.constants.CommonConstants;
 import com.make.space.enums.BufferTime;
+import com.make.space.exceptions.AlreadyBookedException;
+import com.make.space.exceptions.InvalidParameterExceptions;
 import org.apache.commons.lang3.tuple.Pair;
-
 
 import java.util.List;
 
 public class Validator {
 
-    public Boolean isValidRequest(InputRequest inputRequest){
+    public void validateRequest(String sT, String eT) throws InvalidParameterExceptions, AlreadyBookedException {
 
-        Integer startTime = BufferTime.calculateTimeInMinutes(inputRequest.getStartTime());
-        Integer endTime = BufferTime.calculateTimeInMinutes(inputRequest.getEndTime());
+        Integer startTime = BufferTime.calculateTimeInMinutes(sT);
+        Integer endTime = BufferTime.calculateTimeInMinutes(eT);
 
         List<Pair<Integer,Integer>> bufferTimeList = BufferTime.getStartEndTimePairList();
 
         if(startTime%15!=0 || endTime%15!=0 || endTime < startTime){
-            System.out.println(CommonConstants.INCORRECT_INPUT);
-            return false;
+            throw new InvalidParameterExceptions(CommonConstants.INCORRECT_INPUT);
+
         }
 
         for (Pair<Integer,Integer> stEnPair : bufferTimeList){
@@ -29,11 +30,10 @@ public class Validator {
             if ( bufferEndTime <= startTime || endTime <= bufferStartTime ){
                 continue;
             } else {
-                System.out.println(CommonConstants.NO_VACANT_ROOM);
-                return false;
+                throw new AlreadyBookedException(CommonConstants.NO_VACANT_ROOM);
+
             }
         }
 
-        return true;
     }
 }

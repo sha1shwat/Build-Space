@@ -8,9 +8,9 @@ import java.util.List;
 @Getter
 public enum RoomEnum {
 
-    CAVE("C-Cave",3),
-    TOWER("D-Tower",7),
-    MANSION("G-Mansion",20);
+    CAVE("L-Cave",4),
+    TOWER("M-Tower",8),
+    MANSION("N-Mansion",10);
 
     private String roomName;
     private int maxRoomCapacity;

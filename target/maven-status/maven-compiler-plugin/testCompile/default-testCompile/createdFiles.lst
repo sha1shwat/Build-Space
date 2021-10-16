@@ -1,1 +1,4 @@
+com/make/space/client/ClientFactoryTests.class
+com/make/space/client/ClientTests.class
 com/make/space/AppTest.class
+com/make/space/domain/MeetingRoomsTest.class
